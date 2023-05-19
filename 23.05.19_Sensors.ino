@@ -5,7 +5,7 @@ Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 int Vibration_sensorPin = A0;
 int Sound1_sensorPin = A1;
 int Sound2_sensorPin = A2;
-int Flame_sensorPin = 7;
+// int Flame_sensorPin = 7;
 
 void setup() {
   // put your setup code here, to run once:
@@ -13,7 +13,7 @@ void setup() {
   pinMode(Vibration_sensorPin, INPUT);
   pinMode(Sound1_sensorPin, INPUT);
   pinMode(Sound2_sensorPin, INPUT);
-  pinMode(Flame_sensorPin, INPUT);
+  // pinMode(Flame_sensorPin, INPUT);
 
 // IR_Sensor 코드(필요 없을시 지워도 무방함.)
   while (!Serial);
@@ -35,7 +35,7 @@ void loop() {
   int Vibration_value = analogRead(Vibration_sensorPin);
   int Sound1_value = analogRead(Sound1_sensorPin);
   int Sound2_value = analogRead(Sound2_sensorPin);
-  int Flame_value = digitalRead(Flame_sensorPin);
+  // int Flame_value = digitalRead(Flame_sensorPin);
 
   Serial.print("Vibration Sensor Value: ");       
   Serial.println(Vibration_value);
@@ -51,12 +51,12 @@ void loop() {
   Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempF()); // 주변 온도
   Serial.print("*F\tObject = "); Serial.print(mlx.readObjectTempF()); Serial.println("*F"); // 타겟 온도
 
-  if(Flame_value == 0){
-    Serial.println("Fire!!");
-  }
-  else{
-    //Serial.println("OFF"); 
-  }
+  // if(Flame_value == 0){
+  //   Serial.println("Fire!!");
+  // }
+  // else{
+  //   //Serial.println("OFF"); 
+  // }
 
   Serial.println();
   delay(500); // delay(500) 0.5초 간격
