@@ -18,15 +18,15 @@ void setup() {
 // IR_Sensor 코드(필요 없을시 지워도 무방함.)
   while (!Serial);
 
-  Serial.println("Adafruit MLX90614 test");
+  // Serial.println("Adafruit MLX90614 test");
 
   if (!mlx.begin()) {
     Serial.println("Error connecting to MLX sensor. Check wiring.");
     while (1);
   };
 
-  Serial.print("Emissivity = "); Serial.println(mlx.readEmissivity());
-  Serial.println("================================================");
+  // Serial.print("Emissivity = "); Serial.println(mlx.readEmissivity());
+  // Serial.println("================================================");
 // IR_Sensor 코드
 }
 
@@ -37,19 +37,21 @@ void loop() {
   int Sound2_value = analogRead(Sound2_sensorPin);
   // int Flame_value = digitalRead(Flame_sensorPin);
 
-  Serial.print("Vibration Sensor Value: ");       
-  Serial.println(Vibration_value);
+  // Serial.print("Vibration Sensor Value: ");       
+  Serial.print(Vibration_value); Serial.print(",");
 
-  Serial.print("Sound1 Sensor Value: ");       
-  Serial.println(Sound1_value);
+  // Serial.print("Sound1 Sensor Value: ");       
+  Serial.print(Sound1_value); Serial.print(",");
 
-  Serial.print("Sound2 Sensor Value: ");       
-  Serial.println(Sound2_value);
+  // Serial.print("Sound2 Sensor Value: ");       
+  Serial.print(Sound2_value); Serial.print(",");
   
-  Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempC()); // 주변 온도
-  Serial.print("*C\tObject = "); Serial.print(mlx.readObjectTempC()); Serial.println("*C"); // 타겟 온도
-  Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempF()); // 주변 온도
-  Serial.print("*F\tObject = "); Serial.print(mlx.readObjectTempF()); Serial.println("*F"); // 타겟 온도
+  // Serial.print("Ambient = "); 
+  Serial.print(mlx.readAmbientTempC()); // 주변 온도
+  Serial.print("*C,"); 
+  Serial.print(mlx.readObjectTempC()); Serial.print("*C"); // 타겟 온도
+  // Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempF()); // 주변 온도
+  // Serial.print("*F\tObject = "); Serial.print(mlx.readObjectTempF()); Serial.println("*F"); // 타겟 온도
 
   // if(Flame_value == 0){
   //   Serial.println("Fire!!");
@@ -57,7 +59,5 @@ void loop() {
   // else{
   //   //Serial.println("OFF"); 
   // }
-
-  Serial.println();
-  delay(500); // delay(500) 0.5초 간격
+  delay(1); // delay(1) 0.001초 간격
 }
