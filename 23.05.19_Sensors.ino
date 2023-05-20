@@ -4,7 +4,7 @@ Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
 int Vibration_sensorPin = A0;
 int Sound1_sensorPin = A1;
-int Sound2_sensorPin = A2;
+// int Sound2_sensorPin = A2;
 // int Flame_sensorPin = 7;
 
 void setup() {
@@ -12,7 +12,7 @@ void setup() {
   Serial.begin(4800);                     
   pinMode(Vibration_sensorPin, INPUT);
   pinMode(Sound1_sensorPin, INPUT);
-  pinMode(Sound2_sensorPin, INPUT);
+  // pinMode(Sound2_sensorPin, INPUT);
   // pinMode(Flame_sensorPin, INPUT);
 
 // IR_Sensor 코드(필요 없을시 지워도 무방함.)
@@ -34,7 +34,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   int Vibration_value = analogRead(Vibration_sensorPin);
   int Sound1_value = analogRead(Sound1_sensorPin);
-  int Sound2_value = analogRead(Sound2_sensorPin);
+  // int Sound2_value = analogRead(Sound2_sensorPin);
   // int Flame_value = digitalRead(Flame_sensorPin);
 
   // Serial.print("Vibration Sensor Value: ");       
@@ -44,7 +44,7 @@ void loop() {
   Serial.print(Sound1_value); Serial.print(",");
 
   // Serial.print("Sound2 Sensor Value: ");       
-  Serial.print(Sound2_value); Serial.print(",");
+  // Serial.print(Sound2_value); Serial.print(",");
   
   // Serial.print("Ambient = "); 
   Serial.print(mlx.readAmbientTempC()); // 주변 온도
