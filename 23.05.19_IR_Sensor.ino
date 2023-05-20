@@ -40,9 +40,9 @@ void loop() {
   // Serial.print("*F\tObject = "); Serial.print(mlx.readObjectTempF()); Serial.println("*F");
 
   if(Flame_value == 0){
-    Serial.println("Fire!!");
+    Serial.println("Fire!!"); // 0값이 나오면 화재 발생
   }
-  else{
+  else{ // 평소에는 1값이 나옴.
     //Serial.println("OFF"); 
   }
 
