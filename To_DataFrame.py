@@ -8,8 +8,8 @@ file_path2 = "파일경로.txt" # Sound2, IR2 Sensor 데이터 파일
 with open(file_path1, 'r') as file:
     lines = file.readlines()
 
-# 데이터프레임 생성
-df1 = pd.DataFrame([line.strip().split(',') for line in lines], columns=['시각','진동','음향1','적외선1','화재'])
+# 데이터프레임 생성 - columns=['시각','진동','음향1','적외선1','화재']
+df1 = pd.DataFrame([line.strip().split(',') for line in lines], columns=['시각','음향1','적외선1','화재'])
 
 # 데이터프레임 출력
 print(df1)

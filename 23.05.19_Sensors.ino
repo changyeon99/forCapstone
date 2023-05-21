@@ -2,7 +2,7 @@
 
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
-int Vibration_sensorPin = A0;
+//int Vibration_sensorPin = A0;
 int Sound1_sensorPin = A1;
 // int Sound2_sensorPin = A2;
 int Flame_sensorPin = 7;
@@ -10,7 +10,7 @@ int Flame_sensorPin = 7;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(4800);                     
-  pinMode(Vibration_sensorPin, INPUT);
+  //pinMode(Vibration_sensorPin, INPUT);
   pinMode(Sound1_sensorPin, INPUT);
   // pinMode(Sound2_sensorPin, INPUT);
   pinMode(Flame_sensorPin, INPUT);
@@ -32,13 +32,13 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int Vibration_value = analogRead(Vibration_sensorPin);
+  //int Vibration_value = analogRead(Vibration_sensorPin);
   int Sound1_value = analogRead(Sound1_sensorPin);
   // int Sound2_value = analogRead(Sound2_sensorPin);
   int Flame_value = digitalRead(Flame_sensorPin);
 
   // Serial.print("Vibration Sensor Value: ");       
-  Serial.print(Vibration_value); Serial.print(",");
+  //Serial.print(Vibration_value); Serial.print(",");
 
   // Serial.print("Sound1 Sensor Value: ");       
   Serial.print(Sound1_value); Serial.print(",");
