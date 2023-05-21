@@ -9,7 +9,7 @@ with open(file_path1, 'r') as file:
     lines = file.readlines()
 
 # 데이터프레임 생성
-df1 = pd.DataFrame(lines, columns=['시각','진동','음향1','적외선1'])
+df1 = pd.DataFrame([line.strip().split(',') for line in lines], columns=['시각','진동','음향1','적외선1'])
 
 # 데이터프레임 출력
 print(df1)
@@ -18,7 +18,7 @@ with open(file_path2, 'r') as file:
     lines = file.readlines()
 
 # 데이터프레임 생성
-df2 = pd.DataFrame(lines, columns=['시각','음향2','적외선2','화재'])
+df2 = pd.DataFrame([line.strip().split(',') for line in lines], columns=['시각','음향2','적외선2','화재'])
 
 # 데이터프레임 출력
 print(df2)

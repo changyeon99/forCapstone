@@ -13,7 +13,7 @@ try:
         while True:
             now = datetime.now()
             data = ser.readline.decode().strip() # 시리얼 포트로부터 데이터 읽기
-            file.write(str(now.date()) + ' ' + str(now.time()) + ' ' + data + '\n') # 데이터를 파일 저장 / 시각 --> 년.월.일 시:분:초.xxxxxx 으로 데이터 저장됨.
+            file.write(str(now.date()) + ' ' + str(now.time()) + ',' + data + '\n') # 데이터를 파일 저장 / 시각 --> 년.월.일 시:분:초.xxxxxx 으로 데이터 저장됨.
 
 except KeyboardInterrupt:
     print("Ctrl + C")
