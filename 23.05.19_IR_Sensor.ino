@@ -5,7 +5,7 @@ Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 int Sound2_sensorPin = A2;
 
 void setup() {
-  Serial.begin(4800);
+  Serial.begin(2000000);
 
   pinMode(Sound2_sensorPin, INPUT);
 
@@ -36,5 +36,5 @@ void loop() {
   // Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempF());
   // Serial.print("*F\tObject = "); Serial.print(mlx.readObjectTempF()); Serial.println("*F");
 
-  delay(1000);
+  delay(0.1);
 }

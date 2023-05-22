@@ -60,5 +60,5 @@ void loop() {
    //else{ // 평소에는 1값이 나옴.
    //  Serial.println(1); 
    //}
-  delay(1); // delay(1) 0.001초 간격
+  delay(0.1); // delay(1) 0.001초 간격
 }
