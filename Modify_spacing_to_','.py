@@ -9,7 +9,7 @@ Created on Mon May 22 15:08:06 2023
 file_path = "파일경로.txt"
 
 # 수정할 위치와 대체할 문자열
-position = 28  # 수정할 위치 (0부터 시작)
+position = 26  # 수정할 위치 (0부터 시작)
 
 # 텍스트 파일 불러오기
 with open(file_path, 'r') as file:
