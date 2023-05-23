@@ -21,16 +21,14 @@ try:
     while True:
         now = datetime.now()    
         if now.second == 0:  # 현재 시각의 초가 0초인 경우에만 데이터 저장
-            with open(time.strftime('%Y.%m.%d_%H:%M')+'.txt', 'w') as file: # 파일 위치 정의하기
+            with open('/home/changyeong99/'+time.strftime('%Y.%m.%d_%H:%M')+'.txt', 'w') as file: # 파일 위치 정의하기
                 while True:
                     start_time = datetime.now()
                     if start_time.second != 0:
                         time.sleep(58)
                         break
-                    print(start_time.second)
-                    print(start_time.time())
                     data = ser.readline.decode().strip() # 시리얼 포트로부터 데이터 읽기
-                    file.write(data + '\n') # 데이터를 파일 저장 / 시각 --> 년.월.일 시:분:초.xxxxxx 으로 데이터 저장됨.
+                    file.write(data + '\n') # 데이터를 파일 저장 / 시각 --> 음향, 데이터 저장됨.
 
 except KeyboardInterrupt:
     print("Ctrl + C")
