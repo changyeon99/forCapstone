@@ -9,7 +9,7 @@ repo_owner = 'changyeon99'
 repo_name = 'TimingBeltData'
 branch_name = 'main'
 # Github 엑세스 토큰 정보
-access_token = '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'
+access_token = ''
 # GitHub 액세스 토큰을 사용하여 인증합니다.
 g = Github(access_token)
 # 사용자명과 저장소명을 기반으로 저장소를 가져옵니다.
