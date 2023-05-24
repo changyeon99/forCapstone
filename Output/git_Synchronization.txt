@@ -1,0 +1,16 @@
+깃허브에 동기화 시킬 파일 위치로 이동
+cd..
+
+git add 파일명
+ex) git add Modify_spacing_to_','.py
+
+git status <---- status 명령어로 변경내용을 확인 할 수 있다.
+
+git commit -m "설명"
+ex) git commit -m "2023.05.22"
+
+git remote add [git 경로]
+ex) git remote add https://github.com/changyeon99/forCapstone.git
+
+git push [옵션] [원격 저장소명] [브랜치명] <------------ 브랜치를 생략하면 "main"이라는 기본 브랜치에 저장된다.
+ex) git push https://github.com/changyeon99/forCapstone.git
