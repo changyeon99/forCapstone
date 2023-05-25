@@ -37,7 +37,7 @@ try:
                         time_difference = now.replace(second=58) - now
                         time.sleep(time_difference.total_seconds())
                         break ## 일시정지 후 While문 탈출.
-                    data = ser.readline.decode().strip() # 시리얼 포트로부터 데이터 읽기
+                    data = ser.readline().decode().strip() # 시리얼 포트로부터 데이터 읽기
                     file.write(data + '\n') # 데이터를 파일 저장
 except KeyboardInterrupt:
     print("Ctrl + C")

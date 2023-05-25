@@ -27,7 +27,7 @@ try:
                     if start_time.second != 0:
                         time.sleep(58)
                         break
-                    data = ser.readline.decode().strip() # 시리얼 포트로부터 데이터 읽기
+                    data = ser.readline().decode().strip() # 시리얼 포트로부터 데이터 읽기
                     file.write(data + '\n') # 데이터를 파일 저장 / 시각 --> 음향, 데이터 저장됨.
 
 except KeyboardInterrupt:
