@@ -25,7 +25,7 @@ try:
         now = datetime.now() ## 현재 시각 17시 50분 00초
         if now.second == 0: ## 00초이므로 시작
             file_name = time.strftime('%Y-%m-%d %H:%M') + '.txt'
-            file_path = "C:/Users/99kit/Desktop/ABCDEF/" + file_name
+            # file_path = "C:/Users/99kit/Desktop/ABCDEF/" + file_name
             with open(file_name, 'w') as file: ## ABCDEF 폴더에 2023-05-24 17:50.txt 파일 생성
                 while True:
                     start_time = datetime.now()
@@ -34,7 +34,7 @@ try:
                             repo.create_file(file_name, "Upload data", file.read(), branch=branch.name)
                         os.remove(file_name) # 임시로 생성한 CSV 파일을 삭제합니다.
                         now = datetime.now()
-                        time_difference = now.replace(second=58) - now
+                        time_difference = now.replace(second=59) - now
                         time.sleep(time_difference.total_seconds())
                         break ## 일시정지 후 While문 탈출.
                     data = ser.readline().decode().strip() # 시리얼 포트로부터 데이터 읽기
