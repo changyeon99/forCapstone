@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-import OS
+import os
 
 channel = 17  # BCM. 17, wPi. 0, Physical. 11(DOUT에 연결)
 
