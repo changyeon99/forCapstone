@@ -26,11 +26,11 @@ try:
         if now.second == 0: ## 00초이므로 시작
             file_name = time.strftime('%Y-%m-%d %H:%M') + '.txt'
             file_path = "C:/Users/99kit/Desktop/ABCDEF/" + file_name
-            with open(file_path, 'w') as file: ## ABCDEF 폴더에 2023-05-24 17:50.txt 파일 생성
+            with open(file_name, 'w') as file: ## ABCDEF 폴더에 2023-05-24 17:50.txt 파일 생성
                 while True:
                     start_time = datetime.now()
                     if start_time.second != 0: ## 현 시각 01초가 되는 순간, 00초가 아니므로 if문 발동
-                        with open(file_path, 'r') as file: # 파일을 저장소에 업로드합니다.
+                        with open(file_name, 'r') as file: # 파일을 저장소에 업로드합니다.
                             repo.create_file(file_name, "Upload data", file.read(), branch=branch.name)
                         os.remove(file_name) # 임시로 생성한 CSV 파일을 삭제합니다.
                         now = datetime.now()
