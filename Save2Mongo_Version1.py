@@ -52,7 +52,7 @@ try:
                 while True:
                     start_time = datetime.now()
                     if start_time.second != 0:
-                        df = pd.DataFrame([line.strip().split(',') for line in data_list], columns=['시각','음향2','적외선2']) # 컬럼명을 올바르게 수정해야함.
+                        df = pd.DataFrame([line.strip().split(',') for line in data_list]) # 컬럼명을 올바르게 수정해야함.
                         df.to_csv(file_name) # csv파일명 올바르게 수정해야함.
                         collection = db[coll_name] # '세부 데이터베이스 이름' --> file_name으로 변경하면 됨 / file_name = time.strftime('%Y-%m-%d %H:%M') + '.txt'
                         df = pd.read_csv(file_name, encoding='cp949') # file_name
