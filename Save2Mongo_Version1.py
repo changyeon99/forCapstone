@@ -11,7 +11,12 @@ try:
 except Exception as e:
     print(e)
 
-db = client['TimingBelt_Data'] # db 컨택 / 없는것도 바로 생성 가능
+# CMPS : 측면파손
+# CHBJ : 치형빠짐
+# SSJD : 심선절단
+# SSNC : 심선노출
+# GMGY : 고무균열
+db = client['CMPS_TimingBelt_Data'] # db 컨택 / 없는것도 바로 생성 가능
 
 # DB 저장
 import pandas as pd
@@ -38,7 +43,7 @@ try:
                 if NUM == 481:
                     hour = 1
                     # 새로운 메인 DB 생성하기
-                    db = client['TimingBelt_Data_After_' + 8*hour] # db 컨택 / 없는것도 바로 생성 가능
+                    db = client['CMPS_TimingBelt_Data_After_' + 8*hour] # db 컨택 / 없는것도 바로 생성 가능
                     NUM = 0
                     hour += 1
                 file_name = time.strftime('%Y-%m-%d %H:%M') + '.csv' # csv파일명 올바르게 수정해야함.
