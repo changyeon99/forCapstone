@@ -27,8 +27,6 @@ from datetime import datetime
 # 시리얼 포트 설정
 ser = serial.Serial('/dev/ttyACM0', 2000000) # 포트 번호와 통신속도를 아두이노를 동일하게 설정해야함.
 
-data_list = []  # 데이터를 저장할 리스트
-
 # 데이터 읽기 및 저장
 try:
     while True:
@@ -36,6 +34,7 @@ try:
         if now.second == 0:  # 현재 시각의 초가 0초인 경우에만 데이터 저장 
             file_name = time.strftime('%Y-%m-%d %H:%M') + '.csv' # csv파일명 올바르게 수정해야함.
             coll_name = time.strftime('%Y-%m-%d %H:%M')
+            data_list = []  # 데이터를 저장할 리스트
             while True:
                 start_time = datetime.now()
                 if start_time.second != 0:
