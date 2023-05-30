@@ -15,14 +15,17 @@ branch = repo.get_branch(branch_name)
 ser = serial.Serial('/dev/ttyACM0', 2000000)
 try:
     while True:
-        if int(datetime.now().strftime('%f')[:-4]) == 00:
+        if int(datetime.now().strftime('%f')[:-5]) == 0:
             file_name = time.strftime('%Y-%m-%d %H:%M:%S') + '.txt'
             with open(file_name, 'w') as file:
                 while True:
-                    if int(datetime.now().strftime('%f')[:-4]) != 00:
+                    if int(datetime.now().strftime('%f')[:-5]) != 0:
                         with open(file_name, 'r') as file:
                             repo.create_file(file_name, "Upload data", file.read(), branch=branch.name)
                         os.remove(file_name)
+                        now = datetime.now()
+                        time_difference = now.replace(microsecond = 500000) - now
+                        time.sleep(time_difference.total_seconds())
                         break
                     file.write(ser.readline().decode().strip() + '\n')
 except KeyboardInterrupt:
