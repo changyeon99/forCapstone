@@ -25,7 +25,7 @@ try:
                 if start_time.minute != now.minute:
                     df = pd.DataFrame([line.strip().split(',') for line in data_list])
                     print(df)
-                    df.to_csv(file_name) # csv파일명 올바르게 수정해야함.
+                    df.to_csv('/home/chagyeon99/Data/'+file_name) # csv파일명 올바르게 수정해야함.
                     break ## 일시정지 후 While문 탈출.
                 data = ser.readline().decode().strip()
                 data_list.append(str(start_time.date()) + str(start_time.time()) + ',' + data)
