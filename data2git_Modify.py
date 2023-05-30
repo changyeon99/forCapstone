@@ -28,10 +28,10 @@ try:
         now = datetime.now() ## 현재 시각 17시 50분 00초
         if (now.second == 0) & (count==0): ## 00초이므로 시작
             count = 1
-            file_name = time.strftime('%Y-%m-%d %H:%M') + '.txt'
+            file_name = time.strftime('%Y-%m-%d %H:%M:%S') + '.txt'
             continue
         else:
-            file_name = time.strftime('%Y-%m-%d %H:%M') + '.txt'
+            file_name = time.strftime('%Y-%m-%d %H:%M:%S') + '.txt'
             # file_path = "C:/Users/99kit/Desktop/ABCDEF/" + file_name
             with open(file_name, 'w') as file: ## ABCDEF 폴더에 2023-05-24 17:50.txt 파일 생성
                 while True:
