@@ -31,8 +31,8 @@ void loop() {
 
   // Serial.print("Ambient = "); 
   Serial.print(mlx.readAmbientTempC()); // 주변 온도
-  Serial.print("*C,"); 
-  Serial.print(mlx.readObjectTempC()); Serial.println("*C"); // 타겟 온도
+  Serial.print(","); 
+  Serial.println(mlx.readObjectTempC()); //Serial.println("*C"); // 타겟 온도
   // Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempF());
   // Serial.print("*F\tObject = "); Serial.print(mlx.readObjectTempF()); Serial.println("*F");
 
