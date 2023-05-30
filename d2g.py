@@ -23,6 +23,9 @@ try:
                         with open(file_name, 'r') as file:
                             repo.create_file(file_name, "Upload data", file.read(), branch=branch.name)
                         os.remove(file_name)
+                        now = datetime.now()
+                        time_difference = now.replace(microsecond = 500000) - now
+                        time.sleep(time_difference.total_seconds())
                         break
                     file.write(ser.readline().decode().strip() + '\n')
 except KeyboardInterrupt:
