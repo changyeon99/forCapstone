@@ -29,7 +29,6 @@ try:
         if (now.second == 0) & (count==0): ## 00초이므로 시작
             count = 1
             file_name = time.strftime('%Y-%m-%d %H:%M') + '.txt'
-            # file_path = "C:/Users/99kit/Desktop/ABCDEF/" + file_name
             with open(file_name, 'w') as file: ## ABCDEF 폴더에 2023-05-24 17:50.txt 파일 생성
                 while True:
                     start_time = datetime.now()
@@ -37,11 +36,11 @@ try:
                         with open(file_name, 'r') as file: # 파일을 저장소에 업로드합니다.
                             repo.create_file(file_name, "Upload data", file.read(), branch=branch.name)
                         os.remove(file_name) # 임시로 생성한 CSV 파일을 삭제합니다.
+                        break
                     data = ser.readline().decode().strip() # 시리얼 포트로부터 데이터 읽기
                     file.write(data + '\n') # 데이터를 파일 저장
         elif count == 1:
             file_name = time.strftime('%Y-%m-%d %H:%M') + '.txt'
-            # file_path = "C:/Users/99kit/Desktop/ABCDEF/" + file_name
             with open(file_name, 'w') as file: ## ABCDEF 폴더에 2023-05-24 17:50.txt 파일 생성
                 while True:
                     start_time = datetime.now()
@@ -49,6 +48,7 @@ try:
                         with open(file_name, 'r') as file: # 파일을 저장소에 업로드합니다.
                             repo.create_file(file_name, "Upload data", file.read(), branch=branch.name)
                         os.remove(file_name) # 임시로 생성한 CSV 파일을 삭제합니다.
+                        break
                     data = ser.readline().decode().strip() # 시리얼 포트로부터 데이터 읽기
                     file.write(data + '\n') # 데이터를 파일 저장
         else:
