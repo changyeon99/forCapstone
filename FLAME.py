@@ -18,7 +18,7 @@ if __name__ == "__main__" :
                 print(timestamp, "안전")
             else :                      # 불꽃 감지시 0을 전송함
                 print(timestamp, "화재 경보")
-                os.system('/home/pi/program/pushbullet.sh "fire alarm"')            
+                os.system('/home/pi/program/pushbullet.sh')            
                 time.sleep(1)
     except :
         print("err or Ctrl - C")
