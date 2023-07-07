@@ -25,8 +25,8 @@ def readChannel(channel):
     return val_time, int_val, voltage_val
 
 vibration = 0 #진동 채널
-vibration_list = []
-# sound1 = 1 #음향1 채널
+data_list = []
+sound1 = 1 #음향1 채널
 # sound2 = 2 #음향2 채널
 # IR1 = 3 #적외선1 채널
 # IR2 = 4 #적외선2 채널
@@ -38,20 +38,29 @@ GPIO.setup(Flame_channel, GPIO.IN)
 
 try :
     while True :
-        now = time.localtime()
-        timestamp = ("%04d-%02d-%02d %02d:%02d:%02d" % 
-        (now.tm_year, now.tm_mon, now.tm_mday, 
-        now.tm_hour, now.tm_min, now.tm_sec))
-        if GPIO.input(Flame_channel) == 0 : # 불꽃 감지시 0을 전송함                     
-            print(timestamp, "화재 경보")
-        val_time, int_val, voltage_val = readChannel(vibration)
-        vibration_list.append([val_time, int_val, voltage_val])
+        # now = time.localtime()
+        # timestamp = ("%04d-%02d-%02d %02d:%02d:%02d" % 
+        # (now.tm_year, now.tm_mon, now.tm_mday, 
+        # now.tm_hour, now.tm_min, now.tm_sec))
+        # if GPIO.input(Flame_channel) == 0 : # 불꽃 감지시 0을 전송함                     
+        #     print(timestamp, "화재 경보")
+        # val_time, int_val, voltage_val = readChannel(vibration)
+        # data_list.append([val_time, int_val, voltage_val])
+        val = readChannel(sound1)
+        int_val = val
+        voltage_val = (val*3.3)/1024
+        val_time = time.strftime('%Y-%m-%d %H:%M:%S')
+        print('Sound int값 :', int_val)
+        print('Sound int값 :', voltage_val)
+        print(val_time)
+        data_list.append([val_time, int_val, voltage_val])
+        time.sleep(1)
         time.sleep(1)
         
 except :
     print("err or Ctrl - C")
     columns = ['시각','int','voltage']
-    pd_data = pd.DataFrame(vibration_list, columns=columns)
+    pd_data = pd.DataFrame(data_list, columns=columns)
     print(pd_data)
 finally :
     GPIO.cleanup()
